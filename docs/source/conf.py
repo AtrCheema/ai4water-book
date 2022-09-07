@@ -10,14 +10,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+from sphinx_gallery.sorting import ExampleTitleSortKey
+
 # sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'sphinx-book'
+project = 'ai4water-book'
 copyright = '2022, Ather Abbas'
 author = 'Ather Abbas'
 
@@ -28,6 +29,23 @@ author = 'Ather Abbas'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+'sphinx.ext.todo',
+'sphinx.ext.viewcode',
+'sphinx.ext.autodoc',
+'sphinx.ext.autosummary',
+'sphinx.ext.doctest',
+'sphinx.ext.intersphinx',
+'sphinx.ext.imgconverter',
+'sphinx_issues',
+'sphinx.ext.mathjax',
+'sphinx.ext.napoleon',
+'sphinx.ext.githubpages',
+'sphinx_toggleprompt',
+'sphinx_copybutton',
+"sphinx-prompt",
+"sphinx_gallery.gen_gallery",
+'sphinx.ext.ifconfig',
+"sphinx_thebe"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -38,13 +56,88 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+class ExampleTitleSortKeyWithNumber(ExampleTitleSortKey):
+    """Sort examples in src_dir by example title considering that the title
+    starts with a number followed by space
+    """
+
+    def __call__(self, filename):
+        """extract the title and convert numbers before "." ("dot) to integer
+        1.1 FirstTitle  -> 11
+        """
+        title = super().__call__(filename)
+        number = title.split(' ')[0]
+        return int(number.replace('.', ''))
+
+
+examples_dirs = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'book')
+
+sphinx_gallery_conf = {
+    'backreferences_dir': 'gen_modules/backreferences',
+    #'doc_module': ('sphinx_gallery', 'numpy'),
+    'reference_url': {
+        'sphinx_gallery': None,
+    },
+    'examples_dirs': os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'book'),
+    'gallery_dirs': 'auto_examples',
+    'compress_images': ('images', 'thumbnails'),
+    #'subsection_order': SubSectionTitleOrder(examples_dirs),
+    'filename_pattern': '',
+    'line_numbers': True,
+
+    'binder': {'org': 'AtrCheema',
+               'repo': 'ai4water-book',
+               'branch': 'dev',
+               'binderhub_url': 'https://mybinder.org',
+               'dependencies': os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.binder', 'requirements.txt'),
+               'notebooks_dir': 'notebooks',
+               'use_jupyter_lab': True,
+               },
+    #'show_memory': True,
+    #'junit': os.path.join('sphinx-gallery', 'junit-results.xml'),
+    # capture raw HTML or, if not present, __repr__ of last expression in
+    # each code block
+    'capture_repr': ('_repr_html_', '__repr__'),
+    'matplotlib_animations': True,
+    'image_srcset': ["2x"],
+
+    'within_subsection_order': ExampleTitleSortKeyWithNumber,
+    #'examples_dirs': ['../examples', '../tutorials'],
+    # 'subsection_order': ExplicitOrder(['../examples/sin_func',
+    #                                    '../examples/no_output',
+    #                                    '../tutorials/seaborn']),
+    #'expected_failing_examples': ['../examples/oop/descriptors.py']
+}
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'alabaster'
+
+html_theme = 'sphinx_book_theme'
+
+html_theme_options = {
+    "repository_url": "https://github.com/AtrCheema/ai4water-book",
+    "use_repository_button": True,
+    "use_download_button": True,
+    "use_issues_button": True,
+    "use_edit_page_button": True,
+    "path_to_docs": os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'docs'),
+    "repository_branch": "master",
+    "launch_buttons": {
+        "thebe": True,
+        "notebook_interface": "jupyterlab",
+        "colab_url": "https://colab.research.google.com",
+    }
+}
+
+thebe_config = {
+   "always_load": True,
+    "repository_url": "<https://github.com/AtrCheema/ai4water-book>",
+    "repository_branch": "<master>",
+}
+
+html_title = "ai4water-book"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

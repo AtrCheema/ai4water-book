@@ -1,0 +1,12 @@
+ai4water
+pyarrow
+openpyxl
+sphinx
+sphinx-prompt
+sphinx_copybutton
+sphinx_toggleprompt
+sphinx_rtd_theme
+sphinx-gallery
+sphinx_issues
+sphinx-book-theme
+sphinx-thebe
