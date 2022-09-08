@@ -1,5 +1,5 @@
 """
 ================================
-14. loading model from config
+8. loading model from config
 ================================
 """

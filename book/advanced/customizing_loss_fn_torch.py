@@ -1,5 +1,5 @@
 """
 ================================================
-13. customizing loss function in pytorch
+12. customizing loss function in pytorch
 ================================================
 """

@@ -1,5 +1,5 @@
 """
 ==========================================
-30. visualizing decision trees
+3. visualizing decision trees
 ==========================================
 """

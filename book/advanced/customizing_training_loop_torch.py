@@ -1,5 +1,5 @@
 """
 ================================================
-11. customizing training loop in pytorch
+10. customizing training loop in pytorch
 ================================================
 """

@@ -1,6 +1,6 @@
 """
 ===========================================
-31. visualizing neural networks
+4. visualizing neural networks
 ===========================================
 
 """

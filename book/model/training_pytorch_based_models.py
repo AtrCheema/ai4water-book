@@ -1,5 +1,5 @@
 """
 ====================================
-9. training pytorch based models
+7. training pytorch based models
 ====================================
 """

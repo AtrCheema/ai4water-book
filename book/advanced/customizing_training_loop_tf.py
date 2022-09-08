@@ -1,5 +1,5 @@
 """
 =============================================
-10. customizing training loop in tensorflow
+9. customizing training loop in tensorflow
 =============================================
 """

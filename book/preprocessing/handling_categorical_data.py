@@ -1,5 +1,5 @@
 """
 ================================
-4. multi-input neural network
+2. handling categorical data
 ================================
 """

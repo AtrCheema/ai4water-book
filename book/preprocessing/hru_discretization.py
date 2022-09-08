@@ -1,6 +1,6 @@
 """
 ======================
-3. HRU discretization
+7. HRU discretization
 ======================
 
 """

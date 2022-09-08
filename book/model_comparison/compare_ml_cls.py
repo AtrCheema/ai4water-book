@@ -1,5 +1,5 @@
 """
 ==========================================
-1. postprocessing of regression results
+2. compare ml models for classification
 ==========================================
 """

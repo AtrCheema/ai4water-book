@@ -11,7 +11,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-from sphinx_gallery.sorting import ExampleTitleSortKey
+from sphinx_gallery.sorting import ExampleTitleSortKey, ExplicitOrder
 
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -103,9 +103,15 @@ sphinx_gallery_conf = {
 
     'within_subsection_order': ExampleTitleSortKeyWithNumber,
     #'examples_dirs': ['../examples', '../tutorials'],
-    # 'subsection_order': ExplicitOrder(['../examples/sin_func',
-    #                                    '../examples/no_output',
-    #                                    '../tutorials/seaborn']),
+    'subsection_order': ExplicitOrder(['../../book/model',
+                                       '../../book/hyperparameter_optimization',
+                                       '../../book/model_comparison',
+                                        '../../book/preprocessing',
+                                        '../../book/postprocessing',
+                                        '../../book/advanced',
+                                        '../../book/computer_vision',
+
+                                       ]),
     #'expected_failing_examples': ['../examples/oop/descriptors.py']
 }
 

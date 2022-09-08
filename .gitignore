@@ -1,2 +1,10 @@
 
+# python environments
 envs/
+
+# pycharm
+.idea
+
+# docs building
+docs/build/
+docs/source/auto_examples/

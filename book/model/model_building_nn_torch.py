@@ -1,5 +1,5 @@
 """
 ================================================
-8. building neural network with PyTorch
+6. building neural network with PyTorch
 ================================================
 """

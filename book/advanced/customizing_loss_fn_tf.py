@@ -1,5 +1,5 @@
 """
 ================================================
-12. customizing loss function in tensorflow
+11. customizing loss function in tensorflow
 ================================================
 """

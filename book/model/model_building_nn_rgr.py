@@ -1,5 +1,5 @@
 """
 ================================================
-5. neural networks for regression
+3. neural networks for regression
 ================================================
 """

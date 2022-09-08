@@ -1,5 +1,5 @@
 """
 ===============================
-6. interpretable deep learning
+5. dimensionality reduction
 ===============================
 """

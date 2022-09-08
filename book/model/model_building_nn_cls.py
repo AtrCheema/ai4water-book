@@ -1,5 +1,5 @@
 """
 ================================================
-6. neural network for classification
+4. neural network for classification
 ================================================
 """

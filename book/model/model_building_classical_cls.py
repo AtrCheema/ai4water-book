@@ -1,5 +1,5 @@
 """
 ================================================
-4. solving classification problem with ML
+2. solving classification problem with ML
 ================================================
 """

@@ -1,5 +1,5 @@
 """
 ===================================================
-16. hyperparameter optimization using Model class
+1. hyperparameter optimization using Model class
 ===================================================
 """

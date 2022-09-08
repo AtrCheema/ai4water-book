@@ -1,5 +1,5 @@
 """
 ================================
-34. multi-output neural network
+3. multi-output neural network
 ================================
 """

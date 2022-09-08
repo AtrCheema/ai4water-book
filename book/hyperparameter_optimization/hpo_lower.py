@@ -1,5 +1,5 @@
 """
 ===================================================
-17. hyperparameter optimizing using HyperOpt class
+2. hyperparameter optimizing using HyperOpt class
 ===================================================
 """
